@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>CFBundleDevelopmentRegion</key>
+		<string>en</string>
+		<key>CFBundleDisplayName</key>
+		<string>AudioRec</string>
+		<key>CFBundleExecutable</key>
+		<string>$(EXECUTABLE_NAME)</string>
+		<key>CFBundleIdentifier</key>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+		<key>CFBundleInfoDictionaryVersion</key>
+		<string>6.0</string>
+		<key>CFBundleName</key>
+		<string>$(PRODUCT_NAME)</string>
+		<key>CFBundlePackageType</key>
+		<string>APPL</string>
+		<key>CFBundleShortVersionString</key>
+		<string>$(MARKETING_VERSION)</string>
+		<key>CFBundleSignature</key>
+		<string>????</string>
+		<key>CFBundleVersion</key>
+		<string>$(CURRENT_PROJECT_VERSION)</string>
+		<key>LSRequiresIPhoneOS</key>
+		<true/>
+		<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSExceptionDomains</key>
+			<dict>
+				<key>localhost</key>
+				<dict>
+					<key>NSExceptionAllowsInsecureHTTPLoads</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
+		<key>NSAppleMusicUsageDescription</key>
+		<string>For Apple Music access</string>
+		<key>NSBluetoothAlwaysUsageDescription</key>
+		<string>For Bluetooth access</string>
+		<key>NSBluetoothPeripheralUsageDescription</key>
+		<string>For Bluetooth Peripheral access</string>
+		<key>NSCalendarsUsageDescription</key>
+		<string>For Calender access</string>
+		<key>NSCameraUsageDescription</key>
+		<string>Nomadz requires access to the camera to take photos for creating posts or uploading profile pictures.</string>
+		<key>NSContactsUsageDescription</key>
+		<string>For Contacts access</string>
+		<key>NSFaceIDUsageDescription</key>
+		<string>Enabling Face ID allows you quick and secure access to your account.</string>
+		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>Your Location is used to to show your nearby offers</string>
+		<key>NSLocationAlwaysUsageDescription</key>
+		<string>Your Location is used to to show your nearby offers</string>
+		<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+		<dict>
+			<key>Personalization</key>
+			<string>Your Location is used to to show your nearby offers </string>
+		</dict>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Your Location is used to to show your nearby offers </string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>For Microphone access</string>
+		<key>NSMotionUsageDescription</key>
+		<string>For Motion Detection access</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>Nomadz requires access to the Photos for creating posts or uploading profile pictures.</string>
+		<key>NSSiriUsageDescription</key>
+		<string>For Siri access</string>
+		<key>NSSpeechRecognitionUsageDescription</key>
+		<string>For Speech Recognition access</string>
+		<key>UILaunchStoryboardName</key>
+		<string>LaunchScreen</string>
+		<key>UIRequiredDeviceCapabilities</key>
+		<array>
+			<string>armv7</string>
+		</array>
+		<key>UISupportedInterfaceOrientations</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+		<key>UIViewControllerBasedStatusBarAppearance</key>
+		<false/>
+	</dict>
+</plist>
