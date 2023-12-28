@@ -15,13 +15,15 @@ import AudioRecorderPlayer, {
   AudioSourceAndroidType,
   OutputFormatAndroidType,
 } from 'react-native-audio-recorder-player';
-import RNFetchBlob from 'rn-fetch-blob';
+import ReactNativeBlobUtil from 'react-native-blob-util'
+
 import Button from './components/uis/Button';
 
 const screenWidth = Dimensions.get('screen').width;
 
 const Page = () => {
-  const dirs = RNFetchBlob.fs.dirs;
+  const [uri, seturi] = useState()
+  const dirs = ReactNativeBlobUtil.fs.dirs;
   const path = Platform.select({
     ios: undefined,
     android: undefined,
@@ -81,8 +83,7 @@ const Page = () => {
         ),
       }));
     });
-
-    console.log(`uri: ${uri}`);
+    seturi(uri)
   };
 
   const onPauseRecord = async () => {
@@ -101,6 +102,16 @@ const Page = () => {
   const onStopRecord = async () => {
     const result = await audioRecorderPlayer.current.stopRecorder();
     audioRecorderPlayer.current.removeRecordBackListener();
+
+    console.log('============uri========================');
+    console.log(uri);
+    console.log('====================================');
+    // Pass the path variable to convertFileToBase64 function
+    const base64Data = await convertFileToBase64(uri);
+
+    // Log or use the base64Data as needed
+    console.log(base64Data);
+
     setState((prevState) => ({
       ...prevState,
       recordSecs: 0,
@@ -145,6 +156,13 @@ const Page = () => {
     audioRecorderPlayer.current.stopPlayer();
     audioRecorderPlayer.current.removePlayBackListener();
   };
+
+  const convertFileToBase64 = async (filePath) => {
+    const uploadUri = Platform.OS === 'ios' ? filePath.replace('file:///', '') : uri;
+    const response = await ReactNativeBlobUtil.fs.readFile(uploadUri, 'base64');
+    return response;
+  };
+
 
   return (
     <SafeAreaView style={styles.container}>
